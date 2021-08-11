@@ -1,0 +1,280 @@
+
+Question 3
+1.	
+>>> 1+
+  File "<interactive input>", line 1
+    1+
+      ^
+SyntaxError: invalid syntax
+
+2.	 
+>>>1+9=
+File "<interactive input>", line 1
+    1+9=
+    ^
+SyntaxError: cannot assign to operator
+
+3.	 
+>>> 9= 10 * 8
+ File "<interactive input>", line 1
+    9= 10 * 8
+    ^
+SyntaxError: cannot assign to literal
+
+4.	
+	>>>y
+Traceback (most recent call last):
+  File "<interactive input>", line 1, in <module>
+NameError: name 'y' is not defined
+
+
+
+
+Question 4
+ 	  >>>print("hello")
+	  hello
+	
+	>>> "hello"
+	'hello'
+
+This first command above is an expression and it prints the content in the quotation mark as supplied while the second command sees “hello” as a value, hence, the interpreter returned the value which is of the datatype: string
+
+Question 6
+	At the immediate mode (Python Prompt)
+	>>> 6+4*9
+	42
+
+
+	At the Script mode 
+ 	6+4*9
+	>>> 
+	*** Remote Interpreter Reinitialized ***
+
+	At the Script mode 
+	print (6+4*9)
+	>>> 
+	*** Remote Interpreter Reinitialized ***
+
+
+
+
+Chapter 2
+
+
+print("________________Question 5___________________")
+# Calcuating the compound interest
+# P represents the Principal Interest
+p = 10000
+# n represents the number of times the interest is compounded per year
+n = 12
+# t represents the number of years
+t = input("Enter the number of years: ")
+# Cast the imput to integer format
+t = int(t)
+# rate is represented as r, with the value 8%
+r = 8/100
+a = p * ((1 +(r/n)) ** (n*t))
+print("The compound interest after {0} years is: {1}".format(t, a))
+
+
+
+print("________________Question 7___________________")
+print('If the time now 2pm, in 51 hours time, the alarm will go off 5pm the second day')
+
+
+
+
+print("________________Question 8___________________")
+t_now = input("Enter the time now in hours in 24-hour clock, e.g 2pm as 14, 8am as 8: ")
+# cast the received value to integer
+t_now = int(t_now)
+# Ensure the 24-hour constraint is maintained
+if(t_now>24):
+    print("The time now entered is invalid")
+else:
+    t_wait = input("Enter the number of hours to wait: ")
+    t_wait = int(t_wait)
+    t_sum = t_wait + t_now
+    # When the number of hours exceed 24 hours
+    if t_sum > 24:
+        t_sum_left = t_wait - (24 - t_now)
+        t_days = t_sum_left // 24
+        t_remainder = t_sum_left % 24
+        if t_remainder > 12:
+            t_remainder = str(24 - t_remainder) + "pm"
+        else:
+            t_remainder = str(t_remainder) + "am"
+        print ("The alarm will go off in {0} days's time by {1}".format(t_days+1,t_remainder))
+    # When the number of hours is within the same day
+    elif t_sum <= 24:
+        t_remainder = t_sum
+        if t_remainder > 12:
+            t_remainder = str(24 - t_remainder) + "pm"
+        else:
+            t_remainder = str(t_remainder) + "am"
+        print ("The alarm will go off {0} today".format(t_remainder))
+
+
+
+
+chapter 3
+
+print("________________Question 4___________________")
+import turtle
+win = turtle.Screen()
+win.bgcolor("lightgreen")
+
+turtle = turtle.Turtle()
+turtle.left(3645)
+
+win.mainloop()
+
+
+
+print("________________Question 5___________________")
+print("---------------------Question 5a- A loop that prints each of the numbers on a new line-----------------")
+xs = [12,10,32,3,66,17,42,99,20]
+# A loop that prints each of the numbers on a new line
+for each in xs:
+    print(each)
+
+
+print("---------------------Question 5b-A loop that prints each number and its square on a new line-----------------")
+# A loop that prints each number and its square on a new line
+for each in xs:
+    print(each, "---", each**2)
+
+
+print("---------------------Question 5c-A loop that add all the number in the list into a variable called total-----------------")
+# A loop that add all the number in the list into a variable called total
+total = 0
+for each in xs:
+    total+=each
+print("The sum of all the number in the list is : ", total)
+
+
+print("---------------------Question 5d-Print Product of all numbers in the list-----------------")
+# A loop that add all the number in the list into a variable called total
+prd = 1
+for each in xs:
+    prd*=each
+print("The product of all the number in the list is : ", prd)
+
+
+
+print("________________Question 6___________________")
+
+
+import turtle
+win = turtle.Screen()
+win.bgcolor("lightgreen")
+win.title(" Polygon Drawer ")
+
+# Equilateral
+equilateral = turtle.Turtle()
+# Make the line thicker
+equilateral.pensize(3)
+equilateral.color('green')
+for a in [1,2,3]:
+    equilateral.forward(60)
+    equilateral.left(120)
+
+
+# Square
+square = turtle.Turtle()
+square.pensize(3)
+square.color('blue')
+for a in [1,2,3,4]:
+    square.forward(60)
+    square.left(90)
+
+# Hexagon
+hexagon = turtle.Turtle()
+hexagon.pensize(3)
+hexagon.color('red')
+for a in [1,2,3,4,5,6]:
+    hexagon.forward(60)
+    hexagon.left(60)
+
+
+# Octagon
+octagon = turtle.Turtle()
+octagon.pensize(3)
+octagon.color('black')
+for a in [1,2,3,4,5,6,7,8]:
+    octagon.forward(60)
+    octagon.left(45)
+win.mainloop()
+
+
+
+
+print("________________Question 7___________________")
+import turtle
+win = turtle.Screen()
+win.bgcolor('cyan')
+win.title("Drunk Pirate Display")
+
+drunk_pirate = turtle.Turtle()
+drunk_pirate.pensize(4)
+drunk_pirate.color('green')
+# A loop to iterate through the angles obtained by the student
+for angle in [160,-43,270,-97,-43,200,-940,17,-86]:
+    # Checks if the angle is positive, then it goes anti-closewise
+    if angle > 0:
+        drunk_pirate.left(angle)
+    # Checks if the angle is negative, then it goes closewise
+    elif angle < 0:
+        drunk_pirate.right(angle)
+    # Moves a distance of 100 after repositioning the turtle head
+    drunk_pirate.forward(100)
+win.mainloop()
+
+
+print("________________Question 11___________________")
+import turtle
+# Create a window
+win = turtle.Screen()
+win.bgcolor("Star Drawer")
+star = turtle.Turtle()
+
+for i in [1,2,3,4,5]:
+    # Move forward by 100
+    star.forward(100)
+    # Turtle head makes angle in the clockwise direction
+    star.right(144)
+star.pendown()
+win.mainloop()
+
+
+print("________________Question 12___________________")
+import turtle
+win = turtle.Screen()
+win.title(" Clock Drawer ")
+win.bgcolor('lightgreen')
+
+clock = turtle.Turtle()
+clock.penup()
+clock.shape('turtle')
+angle = 0
+clock.speed(10)
+for a in range(12):
+    clock.left(angle)
+    clock.forward(150)
+    clock.stamp()
+    clock.home()
+    angle+=30
+
+
+clock1 = turtle.Turtle()
+clock1.penup()
+clock1.shape('classic')
+angle2 = 0
+clock1.speed(10)
+for b in range(12):
+    clock1.left(angle2)
+    clock1.forward(120)
+    clock1.stamp()
+    clock1.home()
+    angle2+=30
+win.mainloop()
