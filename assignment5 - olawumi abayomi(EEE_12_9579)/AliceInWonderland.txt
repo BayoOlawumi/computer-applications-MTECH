@@ -1,0 +1,6 @@
+If you think about what we’ve just done, it is not how we work in real life. If you were given a
+vocabulary and asked to tell if some word was present, you’d probably start in the middle. You can do
+this because the vocabulary is ordered — so you can probe some word in the middle, and immediately
+realize that your target was before (or perhaps after) the one you had probed. Applying this principle
+repeatedly leads us to a very much better algorithm for searching in a list of items that are already
+ordered. (Note that if the items are not ordered, you have little choice other than to look through all

@@ -1,0 +1,3 @@
+a Applying this principle
+repeatedly leads us to a very much better algorithm for searching in a list of items that are already
+ordered. (Note that if the items are not ordered, you have little choice other than to look through all
